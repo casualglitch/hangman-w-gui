@@ -38,7 +38,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import javax.swing.JScrollPane;
 
 public class HangManUI extends Pane {
 	/**
@@ -95,7 +94,7 @@ public class HangManUI extends Pane {
 	private Insets marginlessInsets;
 
 	// Image path
-	private String ImgPath = "file:img/";
+	private String ImgPath = "file: ../../img/";
 
 	// mainPane weight && height
 	private int paneWidth;
@@ -392,8 +391,6 @@ public class HangManUI extends Pane {
 	}
 
 	JEditorPane gamePane;
-        JScrollPane guessesScrollPane;
-        SwingNode gameSwingNode;
 	
 	/**
 	 * This method initializes the game screen for running the game.
@@ -415,10 +412,11 @@ public class HangManUI extends Pane {
 		docManager.setGameDoc(gameDoc);
 		
 		//embed swing into javafx
-		guessesScrollPane = new JScrollPane(gamePane);
-		gameSwingNode = new SwingNode();
-                gameSwingNode.setContent(guessesScrollPane);
-		//guessesScrollPane.autosize();
+		final SwingNode swingNode = new SwingNode();
+		swingNode.setContent(gamePane);
+		ScrollPane guessesScrollPane = new ScrollPane();
+		guessesScrollPane.setContent(swingNode);
+		guessesScrollPane.autosize();
 		//guessesScrollPane.resize(200, 200);
 
 		// LOAD THE HangMan PICTURE AT ZERO STAGE
@@ -526,7 +524,7 @@ public class HangManUI extends Pane {
 		//gamePanel.setLayout(new BorderLayout());
 		southGamePane.setTop(guessingPane);
 		southGamePane.setBottom(letterButtonsPane);
-		gamePanel.setCenter(gameSwingNode);
+		gamePanel.setCenter(guessesScrollPane);
 		gamePanel.setBottom(southGamePane);
 		gamePanel.setRight(hmPane);
 		// NOW MAKE THIS PANEL PART OF THE WORKSPACE, WHICH MEANS WE
