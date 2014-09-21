@@ -121,9 +121,9 @@ public class HangManEventHandler {
         //SET COLOR FIRST
         if(ui.getGSM().getGameInProgress().isRightGuess(guess)){
             //letterButton.setBackground(Color.GREEN);
-        	letterButton.setStyle("-fx-background-color:green");
+        	//letterButton.setStyle("-fx-base:green");
             //letterButton.setForeground(Color.BLUE);
-        	letterButton.setStyle("-fx-text-fill:blue");
+        	letterButton.setStyle("-fx-base:green; -fx-text-fill:blue");
         	
             //letterButton.setEnabled(false);
         	letterButton.setDisable(true);
@@ -134,8 +134,8 @@ public class HangManEventHandler {
             //letterButton.setBackground(Color.RED);
             //letterButton.setForeground(Color.WHITE);
             //letterButton.setEnabled(false);
-        	letterButton.setStyle("-fx-background-color:red");
-        	letterButton.setStyle("-fx-text-fill:white");
+        	//letterButton.setStyle("-fx-base:red");
+        	letterButton.setStyle("-fx-base:red; -fx-text-fill:white");
         	letterButton.setDisable(true);
         }
 
