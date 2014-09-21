@@ -457,8 +457,9 @@ public class HangManUI extends Pane {
 		});
 
 		// THE NEW GAME BUTTON IS LAST CONTROL FOR THE NORTH OF THE SOUTH
-		newGameButton = new Button();
-		
+		//newGameButton = new Button();
+                newGameButton = initToolbarButton(northToolbar,HangManPropertyType.NEW_GAME_IMG_NAME);
+                
 		setTooltip(newGameButton, HangManPropertyType.NEW_GAME_TOOLTIP);
 		
 		newGameButton.setOnAction(new EventHandler<ActionEvent>(){
@@ -511,6 +512,7 @@ public class HangManUI extends Pane {
 				@Override
 				public void handle(ActionEvent event) {
 					// TODO Auto-generated method stub
+                                    
 					eventHandler.respondToGuessWordRequest(event.getSource(),
 							guess);
 				}
@@ -620,8 +622,8 @@ public class HangManUI extends Pane {
         //helpPane.addHyperlinkListener(hhl);         
         
         // ADD IT TO THE WORKSPACE
-       // workspace.add(helpPanel, HangManUIState.VIEW_HELP_STATE.toString());
-       // workspace.getChildren().add(helpPanel);
+        //workspace.add(helpPanel, HangManUIState.VIEW_HELP_STATE.toString()); 
+        //workspace.getChildren().add(helpPanel); 
     } 
 
 	public Image loadImage(String imageName) {
