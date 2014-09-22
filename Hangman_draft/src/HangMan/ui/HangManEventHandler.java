@@ -17,6 +17,7 @@ import properties_manager.PropertiesManager;
 import xml_utilities.InvalidXMLFileFormatException;
 import HangMan.file.HangManFileLoader;
 import HangMan.game.HangManGameStateManager;
+import javafx.geometry.Pos;
 
 public class HangManEventHandler {
 	private HangManUI ui;
@@ -38,7 +39,18 @@ public class HangManEventHandler {
      * to switch to.
      */
 	public void respondToSwitchScreenRequest(HangManUI.HangManUIState uiState){
-		
+            //if requested uiState is stats screen change to stats screen
+            if (uiState == HangManUI.HangManUIState.VIEW_STATS_STATE) {
+                ui.changeWorkspace(uiState);
+            }
+            //if requested uiState is Help screen change to Help screen
+            else if (uiState == HangManUI.HangManUIState.VIEW_HELP_STATE) {
+                ui.changeWorkspace(uiState);
+            }
+            //if requested uiState is Game screen change to Game screen
+            else if (uiState == HangManUI.HangManUIState.PLAY_GAME_STATE) {
+                ui.changeWorkspace(uiState);
+            }
 		//ui.changeWor
 	}
 	
@@ -193,11 +205,12 @@ public class HangManEventHandler {
         Button yesButton = new Button(options[0]);
         Button noButton = new Button(options[1]);
         optionPane.setSpacing(10.0);
+        optionPane.setAlignment(Pos.CENTER);
         optionPane.getChildren().addAll(yesButton, noButton);
         Label exitLabel = new Label(verifyExit);
         exitPane.setCenter(exitLabel);
         exitPane.setBottom(optionPane);
-        Scene scene = new Scene(exitPane, 50, 100);
+        Scene scene = new Scene(exitPane, 300, 100);
         dialogStage.setScene(scene);
         dialogStage.show();
         // WHAT'S THE USER'S DECISION?
