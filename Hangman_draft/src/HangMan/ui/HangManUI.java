@@ -40,6 +40,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javax.swing.JScrollPane;
+import javax.swing.event.HyperlinkEvent;
 
 public class HangManUI extends Pane {
 	/**
@@ -152,12 +153,6 @@ public class HangManUI extends Pane {
     { 
         return helpPane; 
     }
-        public JEditorPane getStatsPane() 
-    { 
-        return statsPane; 
-    }
-
-        
 	public void initMainPane() {
 		marginlessInsets = new Insets(5, 5, 5, 5);
 		mainPane = new BorderPane();
@@ -626,8 +621,20 @@ public class HangManUI extends Pane {
         
         // LET OUR HELP SCREEN JOURNEY AROUND THE WEB VIA HYPERLINK
         HelpHyperlinkListener hhl = new HelpHyperlinkListener(this);
-        //helpPane.addHyperlinkListener(hhl);    
-        
+        //helpPane.addHyperlinkListener(hhl);
+        helpPane.addHyperlinkListener(new HyperlinkListener() {
+            @Override
+            public void hyperlinkUpdate(HyperlinkEvent he) {
+                try
+                {
+                    if (he.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                        helpPane.setPage(he.getURL());
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error loading url: " + e);
+                }
+            }
+        });
         
         // ADD IT TO THE WORKSPACE
         workspace.getChildren().add(helpPanel);
@@ -713,7 +720,6 @@ public class HangManUI extends Pane {
         HangManGameData gameInProgress = gsm.getGameInProgress();
         if (gameInProgress != null)
             primaryStage.setTitle(gameInProgress.getSecretWord());
-            //System.out.println(gameInProgress.getSecretWord());
     }
 
 	/**
