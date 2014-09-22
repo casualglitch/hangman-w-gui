@@ -30,6 +30,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -151,7 +152,12 @@ public class HangManUI extends Pane {
     { 
         return helpPane; 
     }
+        public JEditorPane getStatsPane() 
+    { 
+        return statsPane; 
+    }
 
+        
 	public void initMainPane() {
 		marginlessInsets = new Insets(5, 5, 5, 5);
 		mainPane = new BorderPane();
@@ -418,7 +424,7 @@ public class HangManUI extends Pane {
 		guessesScrollPane = new JScrollPane(gamePane);
 		gameSwingNode = new SwingNode();
                 gameSwingNode.setContent(guessesScrollPane);
-		//guessesScrollPane.autosize();
+                //guessesScrollPane.autosize();
 		//guessesScrollPane.resize(200, 200);
 
 		// LOAD THE HangMan PICTURE AT ZERO STAGE
@@ -562,10 +568,11 @@ public class HangManUI extends Pane {
         statsScrollPane.setContent(swingNode);
         
         // NOW ADD IT TO THE WORKSPACE, MEANING WE CAN SWITCH TO IT
+        workspace.getChildren().add(statsScrollPane);
         //workspace.add(statsScrollPane, HangManUIState.VIEW_STATS_STATE.toString());
         //workspace.getChildren().add(statsScrollPane);
     }
-
+    
     /**
      * This method initializes the help pane and all of its controls.
      */
@@ -619,9 +626,11 @@ public class HangManUI extends Pane {
         
         // LET OUR HELP SCREEN JOURNEY AROUND THE WEB VIA HYPERLINK
         HelpHyperlinkListener hhl = new HelpHyperlinkListener(this);
-        //helpPane.addHyperlinkListener(hhl);         
+        //helpPane.addHyperlinkListener(hhl);    
+        
         
         // ADD IT TO THE WORKSPACE
+        workspace.getChildren().add(helpPanel);
         //workspace.add(helpPanel, HangManUIState.VIEW_HELP_STATE.toString()); 
         //workspace.getChildren().add(helpPanel); 
     } 
@@ -678,6 +687,18 @@ public class HangManUI extends Pane {
 	 */
 	public void changeWorkspace(HangManUIState uiScreen) {
 		// SWITCH TO THE REQUESTED SCREEN
+               if (uiScreen == HangManUIState.VIEW_HELP_STATE) {
+                   mainPane.setCenter(helpPanel);
+                   helpPanel.toFront();
+               }
+               else if (uiScreen == HangManUIState.VIEW_STATS_STATE) {
+                   mainPane.setCenter(statsScrollPane);
+                   statsScrollPane.toFront();
+               }
+               else if (uiScreen == HangManUIState.PLAY_GAME_STATE) {
+                   mainPane.setCenter(gamePanel);
+                   gamePanel.toFront();
+               }
 		// CardLayout workspaceCardLayout = (CardLayout)workspace.getLayout();
 		// workspaceCardLayout.show(workspace, uiScreen.toString());
 	}
@@ -692,6 +713,7 @@ public class HangManUI extends Pane {
         HangManGameData gameInProgress = gsm.getGameInProgress();
         if (gameInProgress != null)
             primaryStage.setTitle(gameInProgress.getSecretWord());
+            //System.out.println(gameInProgress.getSecretWord());
     }
 
 	/**
