@@ -696,15 +696,12 @@ public class HangManUI extends Pane {
 		// SWITCH TO THE REQUESTED SCREEN
                if (uiScreen == HangManUIState.VIEW_HELP_STATE) {
                    mainPane.setCenter(helpPanel);
-                   helpPanel.toFront();
                }
                else if (uiScreen == HangManUIState.VIEW_STATS_STATE) {
                    mainPane.setCenter(statsScrollPane);
-                   statsScrollPane.toFront();
                }
                else if (uiScreen == HangManUIState.PLAY_GAME_STATE) {
                    mainPane.setCenter(gamePanel);
-                   gamePanel.toFront();
                }
 		// CardLayout workspaceCardLayout = (CardLayout)workspace.getLayout();
 		// workspaceCardLayout.show(workspace, uiScreen.toString());
