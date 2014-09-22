@@ -5,6 +5,5 @@ public class HelpHyperlinkListener  {
 	
 	public HelpHyperlinkListener(HangManUI initUI){
 		ui = initUI;
-		
-	}
+        }
 }
