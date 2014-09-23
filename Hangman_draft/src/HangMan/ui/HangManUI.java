@@ -637,20 +637,7 @@ public class HangManUI extends Pane {
         
         // LET OUR HELP SCREEN JOURNEY AROUND THE WEB VIA HYPERLINK
         HelpHyperlinkListener hhl = new HelpHyperlinkListener(this);
-        //helpPane.addHyperlinkListener(hhl);
-        helpPane.addHyperlinkListener(new HyperlinkListener() {
-            @Override
-            public void hyperlinkUpdate(HyperlinkEvent he) {
-                try
-                {
-                    if (he.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-                        helpPane.setPage(he.getURL());
-                    }
-                } catch (Exception e) {
-                    System.err.println("Error loading url: " + e);
-                }
-            }
-        }); 
+        helpPane.addHyperlinkListener(hhl);
         
         // ADD IT TO THE WORKSPACE
         workspace.getChildren().add(helpPanel);
