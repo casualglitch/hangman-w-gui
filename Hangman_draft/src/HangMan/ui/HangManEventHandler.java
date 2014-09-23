@@ -105,7 +105,7 @@ public class HangManEventHandler {
             ui.initHangManUI();
             
             // WE'LL START THE GAME TOO
-            gsm.startNewGame();
+            //gsm.startNewGame();
         }
         catch(InvalidXMLFileFormatException ixmlffe)
         {
@@ -146,14 +146,14 @@ public class HangManEventHandler {
             //letterButton.setBackground(Color.RED);
             //letterButton.setForeground(Color.WHITE);
             //letterButton.setEnabled(false);
-        	//letterButton.setStyle("-fx-base:red");
-        	letterButton.setStyle("-fx-base:red; -fx-text-fill:white");
-        	letterButton.setDisable(true);
+            //letterButton.setStyle("-fx-base:red");
+            letterButton.setStyle("-fx-base:red; -fx-text-fill:white");
+            letterButton.setDisable(true);
         }
 
-            // THEN PROCESS THE GUESS
+        // THEN PROCESS THE GUESS
                 String guessState=ui.getGSM().getGameInProgress().getNewGuess();
-                System.out.println(guessState);
+        System.out.println(guessState);
                 gsm.processGuess(guessState,guess);
 
     }
