@@ -561,7 +561,8 @@ public class HangManUI extends Pane {
         swingNode.setContent(statsPane);
         statsScrollPane = new ScrollPane();
         statsScrollPane.setContent(swingNode);
-        
+        statsScrollPane.setFitToHeight(true);
+        statsScrollPane.setFitToWidth(true);
         // NOW ADD IT TO THE WORKSPACE, MEANING WE CAN SWITCH TO IT
         workspace.getChildren().add(statsScrollPane);
         //workspace.add(statsScrollPane, HangManUIState.VIEW_STATS_STATE.toString());
@@ -600,7 +601,10 @@ public class HangManUI extends Pane {
         helpPanel = new BorderPane();
         //helpPanel.setLayout(new BorderLayout());
         helpPanel.setTop(helpToolbar);
-        
+     
+        helpScrollPane.setFitToHeight(true);
+        helpScrollPane.setFitToWidth(true);
+        helpScrollPane.setPrefSize(helpPane.getWidth(), helpPane.getHeight());
         helpPanel.setCenter(helpScrollPane);
         helpToolbar.getChildren().add(homeButton);
         helpToolbar.setStyle("-fx-background-color:white");
@@ -629,12 +633,13 @@ public class HangManUI extends Pane {
                 {
                     if (he.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                         helpPane.setPage(he.getURL());
+                        helpPane.revalidate();
                     }
                 } catch (Exception e) {
                     System.err.println("Error loading url: " + e);
                 }
             }
-        });
+        }); 
         
         // ADD IT TO THE WORKSPACE
         workspace.getChildren().add(helpPanel);
