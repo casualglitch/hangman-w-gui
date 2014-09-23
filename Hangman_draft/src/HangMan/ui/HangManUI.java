@@ -17,6 +17,7 @@ import HangMan.file.HangManFileLoader;
 import HangMan.game.HangManGameData;
 import HangMan.game.HangManGameStateManager;
 import application.Main.HangManPropertyType;
+import java.awt.Dimension;
 import properties_manager.PropertiesManager;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
@@ -275,7 +276,7 @@ public class HangManUI extends Pane {
 		northToolbar.setPadding(marginlessInsets);
 		northToolbar.setSpacing(10.0);
 		// northToolbar.addKeyListener(cheatKeyHandler);
-
+                
 		// MAKE AND INIT THE GAME BUTTON
 		gameButton = initToolbarButton(northToolbar,
 				HangManPropertyType.GAME_IMG_NAME);
@@ -464,7 +465,6 @@ public class HangManUI extends Pane {
                 ImageView newGameImgIcon = new ImageView(newGameImg);
                 newGameButton.setGraphic(newGameImgIcon);
                 newGameButton.setPadding(marginlessInsets);
-                //newGameButton = initToolbarButton(northToolbar,HangManPropertyType.NEW_GAME_IMG_NAME);
                 
 		setTooltip(newGameButton, HangManPropertyType.NEW_GAME_TOOLTIP);
 		
@@ -524,6 +524,15 @@ public class HangManUI extends Pane {
 				}
 				
 			});
+                        //Enable cheat to be used even after pressing a letter button
+                        letterButton.setOnKeyPressed(new EventHandler<KeyEvent>(){
+
+                            @Override
+                            public void handle(KeyEvent ke) {
+                                // TODO Auto-generated method stub
+                                cheatKeyHandler.keyPressed(ke);
+                            }
+                        });
 		}
 
 		// RESET ALL THE LETTER BUTTONS
@@ -609,7 +618,6 @@ public class HangManUI extends Pane {
      
         helpScrollPane.setFitToHeight(true);
         helpScrollPane.setFitToWidth(true);
-        helpScrollPane.setPrefSize(helpPane.getWidth(), helpPane.getHeight());
         helpPanel.setCenter(helpScrollPane);
         helpToolbar.getChildren().add(homeButton);
         helpToolbar.setStyle("-fx-background-color:white");
@@ -638,8 +646,6 @@ public class HangManUI extends Pane {
                 {
                     if (he.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                         helpPane.setPage(he.getURL());
-                        helpPane.revalidate();
-                        
                     }
                 } catch (Exception e) {
                     System.err.println("Error loading url: " + e);

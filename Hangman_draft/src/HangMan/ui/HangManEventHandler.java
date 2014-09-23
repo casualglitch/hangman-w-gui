@@ -131,7 +131,10 @@ public class HangManEventHandler {
         HangManGameStateManager gsm = ui.getGSM();
         //CHECK IF THE LETTER IS IN SECRETWORD
         //SET COLOR FIRST
-        if(ui.getGSM().getGameInProgress().isRightGuess(guess)){
+        if (gsm.getGameInProgress()== null){ //if no game has been started, automatically start one
+            gsm.startNewGame();
+        }
+        else if(ui.getGSM().getGameInProgress().isRightGuess(guess)){
             //letterButton.setBackground(Color.GREEN);
         	//letterButton.setStyle("-fx-base:green");
             //letterButton.setForeground(Color.BLUE);
