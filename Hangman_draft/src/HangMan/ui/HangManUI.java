@@ -458,8 +458,13 @@ public class HangManUI extends Pane {
 		});
 
 		// THE NEW GAME BUTTON IS LAST CONTROL FOR THE NORTH OF THE SOUTH
-		//newGameButton = new Button();
-                newGameButton = initToolbarButton(northToolbar,HangManPropertyType.NEW_GAME_IMG_NAME);
+		newGameButton = new Button();
+                String newGameImgName = props.getProperty(HangManPropertyType.NEW_GAME_IMG_NAME);
+                Image newGameImg = loadImage(newGameImgName);
+                ImageView newGameImgIcon = new ImageView(newGameImg);
+                newGameButton.setGraphic(newGameImgIcon);
+                newGameButton.setPadding(marginlessInsets);
+                //newGameButton = initToolbarButton(northToolbar,HangManPropertyType.NEW_GAME_IMG_NAME);
                 
 		setTooltip(newGameButton, HangManPropertyType.NEW_GAME_TOOLTIP);
 		
@@ -634,6 +639,7 @@ public class HangManUI extends Pane {
                     if (he.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                         helpPane.setPage(he.getURL());
                         helpPane.revalidate();
+                        
                     }
                 } catch (Exception e) {
                     System.err.println("Error loading url: " + e);
