@@ -26,17 +26,17 @@
         <property_options name="LANGUAGE_OPTIONS">
             <option>English</option>
             <option>Esperanto</option>
-            <option>Romanian</option>
+            <option>Spanish</option>
         </property_options>
         <property_options name="LANGUAGE_DATA_FILE_NAMES">
             <option>EN.xml</option>
             <option>EO.xml</option>
-            <option>RO.xml</option>
+            <option>SP.xml</option>
         </property_options>
         <property_options name="LANGUAGE_IMAGE_NAMES">
             <option>EN.png</option>
             <option>EO.png</option>
-            <option>RO.png</option>
+            <option>SP.png</option>
         </property_options>
     </property_options_list>
 </properties>

@@ -110,11 +110,13 @@ public class HangManEventHandler {
         catch(InvalidXMLFileFormatException ixmlffe)
         {
             ui.getErrorHandler().processError(HangManPropertyType.INVALID_XML_FILE_ERROR_TEXT);
+            System.out.println("INVALID XML FILE ERROR TEXT");
             System.exit(0);
         }        
         catch(IOException ioe)
         {
             ui.getErrorHandler().processError(HangManPropertyType.INVALID_DICTIONARY_ERROR_TEXT);
+            System.out.println("INVALID DICTIONARY ERROR TEXT");
             System.exit(0);
         }
 	}
