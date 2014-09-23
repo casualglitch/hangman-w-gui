@@ -7,7 +7,7 @@
     <property_list>    
         <property name="WINDOW_ICON"                value="HangManWindowIcon.png"></property>
         <property name="SPLASH_SCREEN_TITLE_TEXT"   value="Select a Language"></property>
-        <property name="WINDOW_WIDTH"               value="800"></property>
+        <property name="WINDOW_WIDTH"               value="1000"></property>
         <property name="WINDOW_HEIGHT"              value="620"></property>
         <property name="SPLASH_SCREEN_IMAGE_NAME"   value="HangManSplashScreen.png"></property>
         <property name="DATA_PATH"                  value="./data/"></property>

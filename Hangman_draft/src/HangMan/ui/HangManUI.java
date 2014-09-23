@@ -17,7 +17,6 @@ import HangMan.file.HangManFileLoader;
 import HangMan.game.HangManGameData;
 import HangMan.game.HangManGameStateManager;
 import application.Main.HangManPropertyType;
-import java.awt.Dimension;
 import properties_manager.PropertiesManager;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
