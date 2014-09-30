@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+    <property_list>    
+        <property name="GAME_TITLE_TEXT" value="HangMan - El juego de palabras de cinco letras. "></property>
+        
+        <!-- THESE ARE THE GUI IMAGES -->
+        <property name="GAME_IMG_NAME"          value="SP_Game.png"></property>
+        <property name="STATS_IMG_NAME"         value="SP_Stats.png"></property>
+        <property name="HELP_IMG_NAME"          value="SP_Help.png"></property>
+        <property name="EXIT_IMG_NAME"          value="SP_Exit.png"></property>
+        <property name="NEW_GAME_IMG_NAME"      value="SP_NewGame.png"></property>
+        <property name="HOME_IMG_NAME"          value="SP_Home.png"></property>
+        <property name="HANGMAN0_IMG_NAME"          value="Hangman0.png"></property>
+        <property name="HANGMAN1_IMG_NAME"          value="Hangman1.png"></property>
+        <property name="HANGMAN2_IMG_NAME"          value="Hangman2.png"></property>
+        <property name="HANGMAN3_IMG_NAME"          value="Hangman3.png"></property>
+        <property name="HANGMAN4_IMG_NAME"          value="Hangman4.png"></property>
+        <property name="HANGMAN5_IMG_NAME"          value="Hangman5.png"></property>
+        <property name="HANGMAN6_IMG_NAME"          value="Hangman6.png"></property>
+        <!-- DATA FILES TO LOAD -->
+        <property name="WORD_LIST_FILE_NAME"    value="SP_FiveLetterWordsList.txt"></property>
+        <property name="GAME_FILE_NAME"         value="SP_GameDisplay.html"></property>
+        <property name="STATS_FILE_NAME"        value="SP_StatsDisplay.html"></property>
+        <property name="HELP_FILE_NAME"         value="SP_Help.html"></property>
+        
+        <!-- IN-GAME TEXT -->
+        <property name="GUESS_LABEL"            value="Adivinar: "></property>
+        <property name="GAME_SUBHEADER_TEXT"    value="Conjeturas (# de letras en la palabra secreta)"></property>
+        <property name="WIN_DISPLAY_TEXT"       value="Usted gana!"></property>
+        <property name="LOSE_DISPLAY_TEXT"       value="Se pierde!"></property>
+        <property name="GAME_RESULTS_TEXT"      value="RESULTADOS DE JUEGO"></property>
+        <property name="EXIT_REQUEST_TEXT"      value="Seguro de que desea dejar de fumar?"></property>
+        <property name="YES_TEXT"               value="Si"></property>
+        <property name="NO_TEXT"                value="No"></property>
+        
+        <!-- TOOLTIPS -->
+        <property name="GAME_TOOLTIP"           value="Ir a la Pantalla de Juego"></property>
+        <property name="STATS_TOOLTIP"          value="Ir a la Pantalla de Resumen de las Estadisticas"></property>
+        <property name="HELP_TOOLTIP"           value="Ir a la Pantalla de Ayuda"></property>
+        <property name="EXIT_TOOLTIP"           value="Salga de la Aplicacion de Juego"></property>
+        <property name="NEW_GAME_TOOLTIP"       value="Comienza un Nuevo Juego"></property>
+        <property name="HOME_TOOLTIP"           value="Ir a Inicio HangMan Ayuda Página"></property>
+        
+        <!-- ERROR FEEDBACK TEXT -->
+        <property name="ERROR_DIALOG_TITLE_TEXT"            value="Un error ha ocurrido"></property>
+        <property name="DUPLICATE_WORD_ERROR_TEXT"          value="Esa palabra ya se ha adivinado"></property>
+        <property name="IMAGE_LOADING_ERROR_TEXT"           value="Una imagen no pudo cargar correctamente"></property>
+        <property name="INVALID_URL_ERROR_TEXT"             value="El intento de cargar una pagina con una URL invalida"></property>
+        <property name="INVALID_DOC_ERROR_TEXT"             value="Hemos encontrado un error de editar un documento HTML"></property>
+        <property name="INVALID_XML_FILE_ERROR_TEXT"        value="No valida archivo de propiedades XML"></property>
+        <property name="INVALID_GUESS_LROGTH_ERROR_TEXT"    value="Adivina debe tener cinco caracteres"></property>
+        <property name="WORD_NOT_IN_DICTIONARY_ERROR_TEXT"  value="Adivina no fue encontrado en el diccionario"></property>
+        <property name="INVALID_DICTIONARY_ERROR_TEXT"      value="Error cargar el diccionario"></property>
+    </property_list>        
+    <!-- AND NOW THE SPANISH ALPHABET -->
+    <property_options_list>
+        <property_options name="LETTER_OPTIONS">
+            <option>A</option>
+            <option>Á</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>É</option>
+            <option>F</option>
+            <option>G</option>
+            <option>H</option>
+            <option>I</option>
+            <option>Í</option>
+            <option>J</option>
+            <option>K</option>
+            <option>L</option>
+            <option>M</option>
+            <option>N</option>
+            <option>Ñ</option>
+            <option>O</option>
+            <option>Ó</option>
+            <option>P</option>
+            <option>Q</option>
+            <option>R</option>
+            <option>S</option>
+            <option>T</option>
+            <option>U</option>
+            <option>Ú</option>
+            <option>Ü</option>
+            <option>V</option>
+            <option>W</option>
+            <option>X</option>
+            <option>Y</option>
+            <option>Z</option>
+        </property_options>
+    </property_options_list>
+</properties>
